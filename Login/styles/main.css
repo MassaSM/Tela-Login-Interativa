@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    --color-primario: #F7770F;
+    --color-secundario: #efefef;
+    --color-terciario: #a2a2ae;
+    --color-white: #ffffff;
+    --font-family: 'Ubuntu', sans-serif;
+}
+
+body{
+    background-image: url(/img/bg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    font-family: var(--font-family);
+    animation: rotate 6s infinite alternate-reverse linear;
+}
+
+.login__card{
+    width: 90%;
+    max-width: 500px;
+    background: var(--color-white);
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0px 0px 10px 6px rgba(0,0,0,0.3);
+    position: absolute;
+    top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login__card .icon{
+    background: var(--color-primario);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.login__card .icon i{
+    font-size: 50px;
+    color: var(--color-white);
+}
+
+.login__card h1{
+    color: var(--color-primario);
+    margin-bottom: 8px;
+}
+
+.login__card h2{
+    font-size: 16px;
+    color: var(--color-primario);
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+.login__form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.login__form .field:not(:last-child),
+.login__form .field button:not(:last-child){
+    margin-bottom: 8px;
+}
+
+.login__form input{
+    border-radius: 12px;
+    padding: 12px 16px;
+    border: solid 2px var(--color-secundario);
+    transition: all 0.375s linear;
+}
+
+.login__form input::placeholder{
+    color: var(--color-terciario);
+    font-family: var(--font-family);
+}
+
+.login__form input:hover,
+.login__form input:focus,
+.login__form input:focus-visible,
+.login__form input:visited,
+.login__form input:target{
+    border: solid 2px var(--color-primario);
+    box-shadow: 0 0 .8rem 6px var(--color-primario);
+}
+
+.login__form .link__reset__password{
+    margin: 24px 0;
+    display: block;
+    font-size: 12px;
+    color: var(--color-primario);
+    text-underline-offset: 4px;
+}
+
+.login__form input,
+.login__form button{
+    width: 100%;
+    height: 50px;
+    outline: none;
+}
+
+.login__form label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.login__form button{
+    border-radius: 12px;
+    background: var(--color-primario);
+    color: var(--color-white);
+    border: none;
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.375s;
+    cursor: pointer;
+}
+
+.login__form button:hover{
+    box-shadow: 0 0 1.1rem 8px var(--color-primario);
+    transform: translateY(-0.4rem);
+    color: var(--color-white);
+}
+
+.login__form button.transparent{
+    background: transparent;
+    border: solid 1px var(--color-primario);
+    color: var(--color-primario);
+}
+
+.group__btn{
+    display: flex;
+    gap: 16px;
+}
+
+@keyframes rotate{
+    100%{
+        background-position: 100% 15%;
+    }
+}
+
+@media only screen and (max-width: 640px){
+    body{
+        animation: rotate 40s infinite alternate linear;
+    }   
+    .login__card{
+        padding: 20px;
+    }
+    .group__btn{
+        flex-wrap: wrap;
+    }
+}
